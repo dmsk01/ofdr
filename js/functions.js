@@ -87,6 +87,7 @@ if (location.hash) {
 }
 //=================
 //Menu
+
 let iconMenu = document.querySelector(".header-menu__icon");
 if (iconMenu != null) {
   let delay = 500;
@@ -523,14 +524,6 @@ function quad(timeFraction) {
 function circ(timeFraction) {
   return 1 - Math.sin(Math.acos(timeFraction));
 }
-/*
-animate({
-  duration: 1000,
-  timing: makeEaseOut(quad),
-  draw(progress) {
-    window.scroll(0, start_position + 400 * progress);
-  }
-});*/
 
 //Полифилы
 (function () {
@@ -559,11 +552,20 @@ animate({
   }
 })();
 
+// menuStrip on scroll
+let headerHoverStrip = document.querySelector(".header-intro__strip");
+
 window.addEventListener('scroll', function () {
-  let headerHoverStrip = document.querySelector(".header-intro__strip")
-  if (window.scrollY != 0) {
-    headerHoverStrip.style.display = "block";
-  } else {
-    headerHoverStrip.style.display = "none";
+  if (window.scrollY) {
+    headerHoverStrip.classList.add("visible");
+  }
+  else if (!window.scrollY) {
+    headerHoverStrip.classList.remove("visible");
   }
 });
+
+
+
+
+
+

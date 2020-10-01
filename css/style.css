@@ -211,7 +211,6 @@ body {
   z-index: 50;
 }
 .header-intro__strip {
-  content: "";
   display: none;
   position: absolute;
   width: 100%;
@@ -222,9 +221,10 @@ body {
   z-index: 2;
   background-color: white;
 }
+
 .header-intro__row {
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 .header-intro__top {
   margin-bottom: 35px;
@@ -488,6 +488,9 @@ body {
   .header-menu .feedback-header__contacts-list {
     align-items: flex-start;
   }
+  .header-intro__strip {
+    display: block;
+  }
 }
 @media screen and (max-width: 768px) and (max-height: 410px) and (orientation: landscape) {
   .header-menu li a {
@@ -495,7 +498,10 @@ body {
     font-size: 14px;
   }
   .header-menu .header-menu__list li {
-    margin: 0px 0px 12px 0px;
+    margin: 0px 0px 10px 0px;
+  }
+  .header-menu._active {
+    padding: 0px 10px 20px 10px;
   }
 }
 .header-menu__icon {
@@ -510,7 +516,7 @@ body {
     width: 30px;
     height: 18px;
     cursor: pointer;
-    z-index: 3;
+    z-index: 5;
   }
   .header-menu__icon span {
     transition: all 0.3s ease 0s;
@@ -662,16 +668,25 @@ body {
 }
 .banner-intro__order {
 }
-.btn {
+.btn_blue {
   display: inline-block;
   padding: 15px 55px;
   background: linear-gradient(90deg, #87aff1 0%, #6c80cb 100%);
   box-shadow: 0px 12px 20px rgba(132, 170, 237, 0.454846);
   border-radius: 3px;
-}
-.btn span {
   text-transform: uppercase;
+  transition: all 0.3s;
+}
+.btn_blue span {
   color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+}
+@media (min-width: 768px) {
+  .btn_blue:hover {
+    transform: scale(1.025);
+    background: linear-gradient(90deg, #5f9cfd 0%, #4664cf 100%);
+  }
 }
 @media (max-width: 992px) {
   .banner-intro {
@@ -718,4 +733,7 @@ body {
   .banner-intro__body {
     max-width: 320px;
   }
+}
+.header-intro__strip.visible {
+  display: block;
 }
