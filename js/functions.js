@@ -88,7 +88,7 @@ if (location.hash) {
 //=================
 //Menu
 
-let iconMenu = document.querySelector(".header-menu__icon");
+let iconMenu = document.querySelector(".bottom-header__icon");
 if (iconMenu != null) {
   let delay = 500;
   let menuBody = document.querySelector(".header-menu");
