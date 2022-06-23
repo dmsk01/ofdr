@@ -311,7 +311,7 @@ body {
 }
 @media (min-width: 768px) {
   .social-header__item:hover {
-    transform: scale(1.1);
+    transform: scale(1.07);
   }
 }
 .social-header__item img {
